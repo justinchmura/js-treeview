@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/justinchmura/js-treeview.svg?branch=master)](https://travis-ci.org/justinchmura/js-treeview)[![npm version](https://badge.fury.io/js/js-treeview.svg)](https://badge.fury.io/js/js-treeview)
 
-A stupid, simple tree view writtin with vanilla JS. I needed a lightweight control that just displayed data in a tree form and out popped this. I wrote a [post on my blog](http://justinchmura.com/2014/07/03/javascript-tree-view/) that goes into more depth.
+A stupid, simple tree view written with vanilla JS. I needed a lightweight control that just displayed data in a tree form and out popped this. I wrote a [post on my blog](http://justinchmura.com/2014/07/03/javascript-tree-view/) that goes into more depth.
 
 ## Dependencies
 
