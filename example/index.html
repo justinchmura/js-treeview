@@ -1,0 +1,74 @@
+<!doctype html>
+
+<title>JS TreeView Example</title>
+<link rel="stylesheet" href="../dist/treeview.min.css" />
+
+<div id="tree"></div>
+<button id="expandAll">Expand All</button>
+<button id="collapseAll">Collapse All</button>
+<script type="text/javascript" src="../dist/treeview.min.js"></script>
+<script type="text/javascript">
+  //
+  // Tree Structure
+  //
+
+  var tree = [{
+    name: 'Vegetables',
+    children: []
+  }, {
+    name: 'Fruits',
+    children: [{
+      name: 'Apple',
+      children: []
+    }, {
+      name: 'Orange',
+      children: []
+    }, {
+      name: 'Lemon',
+      children: []
+    }]
+  }, {
+    name: 'Candy',
+    children: [{
+      name: 'Gummies',
+      children: []
+    }, {
+      name: 'Chocolate',
+      children: [{
+        name: 'M & M\'s',
+        children: []
+      }, {
+        name: 'Hershey Bar',
+        children: []
+      }]
+    }, ]
+  }, {
+    name: 'Bread',
+    children: []
+  }];
+
+  //
+  // Grab expand/collapse buttons
+  //
+  var expandAll = document.getElementById('expandAll');
+  var collapseAll = document.getElementById('collapseAll');
+
+  //
+  // Create tree
+  //
+
+  var t = new TreeView(tree, 'tree');
+
+  //
+  // Attach events
+  //
+
+  expandAll.onclick = function () { t.expandAll(); };
+  collapseAll.onclick = function () { t.collapseAll(); };
+
+  t.on('select', function () { alert('select'); });
+  t.on('expand', function () { alert('expand'); });
+  t.on('collapse', function () { alert('collapse'); });
+  t.on('expandAll', function () { alert('expand all'); });
+  t.on('collapseAll', function () { alert('collapse all'); });
+</script>

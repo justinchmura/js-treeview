@@ -1,0 +1,46 @@
+{
+  "name": "js-treeview",
+  "version": "1.1.1",
+  "description": "TreeView implemented with vanilla JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npm run js:lint && npm run css:lint",
+    "test": "node-qunit-phantomjs ./test/index.html",
+    "install": "npm run build",
+    "build": "npm run js:min && npm run css:min",
+    "js:lint": "jshint src",
+    "js:min": "npm run js:lint && uglifyjs src/treeview.js -o dist/treeview.min.js --source-map dist/treeview.min.js.map --mangle --compress",
+    "css:lint": "csslint src",
+    "css:min": "npm run css:lint && cleancss src/treeview.css -o dist/treeview.min.css --source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justinchmura/js-treeview.git"
+  },
+  "keywords": [
+    "tree",
+    "treeview",
+    "vanilla",
+    "vanilla-js",
+    "browser",
+    "ui"
+  ],
+  "author": {
+    "name": "Justin Chmura",
+    "email": "justin.chmura@gmail.com",
+    "url": "http://justinchmura.com/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justinchmura/js-treeview/issues"
+  },
+  "homepage": "https://github.com/justinchmura/js-treeview",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "clean-css": "^3.4.8",
+    "csslint": "^0.10.0",
+    "jshint": "^2.8.0",
+    "node-qunit-phantomjs": "^1.3.0",
+    "uglify-js": "^2.6.1"
+  }
+}
