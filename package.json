@@ -37,10 +37,10 @@
   "homepage": "https://github.com/justinchmura/js-treeview",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "clean-css": "^3.4.8",
+    "clean-css": "^3.4.11",
     "csslint": "^0.10.0",
     "jshint": "^2.8.0",
-    "node-qunit-phantomjs": "^1.3.0",
+    "node-qunit-phantomjs": "^1.4.0",
     "uglify-js": "^2.6.1"
   }
 }
