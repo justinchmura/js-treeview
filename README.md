@@ -31,7 +31,7 @@ var TreeView = require('js-treeview');
 
 var tree = new TreeView([
     { name: 'Item 1', children: [] },
-    { name: 'Item 2', children: [
+    { name: 'Item 2', expanded: true, children: [
             { name: 'Sub Item 1', children: [] },
             { name: 'Sub Item 2', children: [] }
         ]
@@ -43,7 +43,7 @@ var tree = new TreeView([
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| `data` | `array` | The array of items to populate the tree with. Each item is required to have a `name` and a `children` array. |
+| `data` | `array` | The array of items to populate the tree with. Each item is required to have a `name` and a `children` array. An optional `expanded` option allows you to default the child to be expanded when created. |
 | `id` | `string` | ID of the DOM element to render tree in. |
 
 ## Events
