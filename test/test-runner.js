@@ -4,15 +4,15 @@
   var tree;
   var data = [
     { name: 'Vegetables', children: [] },
-    { name: 'Fruits', children: [
+    { name: 'Fruits', expanded: true, children: [
         { name: 'Apple', children: [] },
         { name: 'Orange', children: [] },
         { name: 'Lemon', children: [] }
       ]
     },
-    { name: 'Candy', children: [
+    { name: 'Candy', expanded: true, children: [
         { name: 'Gummies', children: [] },
-        { name: 'Chocolate', children: [
+        { name: 'Chocolate', expanded: true, children: [
             { name: 'M & M\'s', children: [] },
             { name: 'Hershey Bar', children: [] }
           ]
