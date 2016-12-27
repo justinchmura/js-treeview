@@ -6,7 +6,6 @@
   "scripts": {
     "pretest": "npm run js:lint && npm run css:lint",
     "test": "node-qunit-phantomjs ./test/index.html",
-    "install": "npm run build",
     "build": "npm run js:min && npm run css:min",
     "js:lint": "jshint src",
     "js:min": "npm run js:lint && uglifyjs src/treeview.js -o dist/treeview.min.js --source-map dist/treeview.min.js.map --mangle --compress",
