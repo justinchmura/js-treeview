@@ -75,7 +75,7 @@
           content.appendChild(expando);
           content.appendChild(text);
           leaf.appendChild(content);
-          if (item.children.length > 0) {
+          if (item.children && item.children.length > 0) {
             var children = document.createElement('div');
             children.setAttribute('class', 'tree-child-leaves');
             forEach(item.children, function (child) {
