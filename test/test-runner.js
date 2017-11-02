@@ -29,19 +29,19 @@
   module('init', { setup: setup });
 
   test('creates leaf for each item', function () {
-    var leafCount = $('.tree-leaf-text').length;
+    var leafCount = $('#treeview .tree-leaf-text').length;
     equal(leafCount, 11, 'Proper amount of leaves');
   });
 
   test('creates expando for each item with children', function () {
-    var expandoCount = $('.tree-expando').not('.hidden').length;
+    var expandoCount = $('#treeview .tree-expando').not('.hidden').length;
     equal(expandoCount, 3, 'Proper amount of expandos');
   });
 
   module('events', { setup: setup });
 
   asyncTest('emits "expand" event when leaf is expanded', function () {
-    var $expando = $('.tree-leaf-text:contains("Candy")').first().siblings('.tree-expando');
+    var $expando = $('#treeview .tree-leaf-text:contains("Candy")').first().siblings('.tree-expando');
     $expando.click(); // Collapse it first
     tree.on('expand', function (e) {
       ok(true, 'Expand emitted');
@@ -51,7 +51,7 @@
   });
 
   asyncTest('emits "collapse" event when leaf is collapsed', function () {
-    var $expando = $('.tree-leaf-text:contains("Candy")').first().siblings('.tree-expando');
+    var $expando = $('#treeview .tree-leaf-text:contains("Candy")').first().siblings('.tree-expando');
     tree.on('collapse', function (e) {
       ok(true, 'Collapse emitted');
       start();
@@ -60,7 +60,7 @@
   });
 
   asyncTest('emits "select" event when a leaf is clicked', function () {
-    var $leaf = $('.tree-leaf-text:contains("Orange")');
+    var $leaf = $('#treeview .tree-leaf-text:contains("Orange")');
     tree.on('select', function (e) {
       ok(true, 'Select emitted');
       equal(e.data.name, 'Orange', 'Proper leaf clicked');
@@ -84,6 +84,15 @@
       start();
     });
     tree.collapseAll();
+  });
+
+  test('supports passing in a DOM object', function () {
+    var element = document.getElementById('dom-treeview');
+    var domTree = new TreeView(data, element);
+    var leafCount = $('#dom-treeview .tree-leaf-text').length;
+    equal(leafCount, 11, 'Proper amount of leaves');
+    var expandoCount = $('#dom-treeview .tree-expando').not('.hidden').length;
+    equal(expandoCount, 3, 'Proper amount of expandos');
   });
 
 }(window.jQuery));

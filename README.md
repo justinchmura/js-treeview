@@ -44,7 +44,7 @@ var tree = new TreeView([
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | `data` | `array` | The array of items to populate the tree with. Each item is required to have a `name` and a `children` array. An optional `expanded` option allows you to default the child to be expanded when created. |
-| `id` | `string` | ID of the DOM element to render tree in. |
+| `id` | `string|object` | ID of the DOM element, or the DOM element itself, to render the tree in. |
 
 ## Events
 
