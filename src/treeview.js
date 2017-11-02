@@ -21,6 +21,21 @@
         'select'
       ];
 
+	  /**
+	   * A utilite function to check to see if something is a DOM object
+	   * @param {object} Object to test
+	   * @returns {boolean} If the object is a DOM object
+	   */
+	  function isDOMElement(obj) {
+        try {
+          return obj instanceof HTMLElement;
+        } catch (e) {
+          // Some browsers don't support using the HTMLElement so some extra
+          // checks are needed.
+            return typeof obj === 'object' && obj.nodeType === 1 && typeof obj.style === 'object' && typeof obj.ownerDocument === 'object';
+        }
+	  }
+
       /**
        * A forEach that will work with a NodeList and generic Arrays
        * @param {array|NodeList} arr The array to iterate over
@@ -57,7 +72,7 @@
        * Renders the tree view in the DOM
        */
       function render(self) {
-        var container = document.getElementById(self.node);
+        var container = isDOMElement(self.node) ? self.node : document.getElementById(self.node);
         var leaves = [], click;
         var renderLeaf = function (item) {
           var leaf = document.createElement('div');
